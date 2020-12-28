@@ -4,8 +4,8 @@ export class Todo {
   public completion: boolean;
 
   constructor(text: string) {
-    this.text = text;
     this.id = new Date().getTime(); // ~id from db
+    this.text = text;
     this.completion = false; // default
   }
 }
