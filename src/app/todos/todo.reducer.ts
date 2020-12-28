@@ -2,7 +2,9 @@ import { Action, createReducer, on } from '@ngrx/store';
 import { Todo } from './models/todo.model';
 import { create } from './todo.actions';
 
-const initState: Todo[] = [];
+const initState: Todo[] = [
+	new Todo('default') // default state
+];
 
 const _todoReducer = createReducer(
   initState,

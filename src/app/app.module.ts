@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 // ngRx
 import { StoreModule } from '@ngrx/store';
 import { todoReducer } from './todos/todo.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment'; // no los de prod
 
 @NgModule({
   declarations: [AppComponent, FooterComponent],
@@ -18,6 +20,11 @@ import { todoReducer } from './todos/todo.reducer';
     TodoModule,
     StoreModule.forRoot({
       todos: todoReducer,
+    }),
+    // Instrumentation must be imported after importing StoreModule
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
     }),
   ],
   providers: [],
