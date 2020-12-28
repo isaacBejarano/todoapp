@@ -15,5 +15,6 @@ import { TodoPageComponent } from './todo-page/todo-page.component';
     TodoPageComponent,
   ],
   imports: [CommonModule],
+  exports: [TodoPageComponent], // exception -> make todo-page visible outside todos.module
 })
 export class TodoModule {}
