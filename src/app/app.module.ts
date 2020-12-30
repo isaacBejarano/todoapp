@@ -11,7 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { StoreModule } from '@ngrx/store';
 import { todoReducer } from './todos/todo.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from 'src/environments/environment'; // no los de prod
+import { environment } from 'src/environments/environment'; // not production env
 
 @NgModule({
   declarations: [AppComponent, FooterComponent],
