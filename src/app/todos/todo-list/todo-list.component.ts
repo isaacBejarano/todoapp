@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../interfaces/app-state.interface';
 
@@ -9,13 +9,15 @@ import { Todo } from '../models/todo.model';
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss'],
 })
-export class TodoListComponent {
+export class TodoListComponent implements OnInit {
   todos: Todo[];
 
   constructor(
     // inject Store
     private store: Store<AppState>
-  ) {
+  ) {}
+
+  ngOnInit(): void {
     // prettier-ignore
     this.store
       .select('todos')
