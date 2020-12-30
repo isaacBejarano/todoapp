@@ -1,5 +1,5 @@
 // global reducer to know global state of the app
-import { Todo } from '../models/todo.model';
+import { Todo } from './todos/models/todo.model';
 
 interface AppState {
   todos: Todo[];

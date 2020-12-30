@@ -1,7 +1,4 @@
 <!-- TODO: Jasmine => items class `editing` and `completed` -->
 <ul class="todo-list">
-  <!-- <app-todo-item></app-todo-item> -->
-  <li *ngFor="let todo of todos">
-    {{ todo.text }}
-  </li>
+  <app-todo-item *ngFor="let todo of todos" [_todo]="todo"></app-todo-item>
 </ul>

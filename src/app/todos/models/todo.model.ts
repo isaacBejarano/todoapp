@@ -8,4 +8,6 @@ export class Todo {
     this.text = text;
     this.completion = false; // default
   }
+
+  
 }
