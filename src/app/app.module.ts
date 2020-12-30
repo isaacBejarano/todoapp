@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { TodoModule } from './todos/todo.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // components
 import { AppComponent } from './app.component';
@@ -17,7 +18,9 @@ import { environment } from 'src/environments/environment'; // not production en
   declarations: [AppComponent, FooterComponent],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     TodoModule,
+    // ngRx
     StoreModule.forRoot({
       todos: todoReducer,
     }),
