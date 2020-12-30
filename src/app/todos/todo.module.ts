@@ -18,6 +18,11 @@ import { TodoPageComponent } from './todo-page/todo-page.component';
     TodoListComponent,
     TodoPageComponent,
   ],
+  /* NOTE: 
+    Angular sys won't duplciate ReactiveFormsModule instance / it was loaded in app.mopdule.
+    But we need to declare it as an import here too / todo.module is encapsulated.
+    It knows nothing about what's going on in app.module
+  */
   imports: [CommonModule, ReactiveFormsModule],
   exports: [TodoPageComponent], // exception -> make todo-page visible outside todos.module
 })
