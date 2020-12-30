@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
 // ngRx
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/app.reducer';
+import { AppState } from 'src/app/todos/interfaces/app-state.interface';
 import * as actions from '../todo.actions';
 
 @Component({
@@ -11,7 +11,7 @@ import * as actions from '../todo.actions';
   templateUrl: './todo-add.component.html',
   styleUrls: ['./todo-add.component.scss'],
 })
-export class TodoAddComponent implements OnInit {
+export class TodoAddComponent {
   textInput: FormControl;
 
   constructor(
@@ -21,8 +21,6 @@ export class TodoAddComponent implements OnInit {
     // forms
     this.textInput = new FormControl('', Validators.required);
   }
-
-  ngOnInit(): void {}
 
   create() {
     if (this.textInput.valid) {
